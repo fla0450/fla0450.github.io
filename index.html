@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="tlqkf/js/index.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+    box-sizing: border-box;
+    color:white;
+  }
+  a{
+    text-decoration: none;
+    color:lightblue
+  }
+  body {
+    margin: 0;
+    background-color: black;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content .header {
+    background: black;
+    padding: 16px;
+    color: white;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: black;
+    height: 300px;
+  }
+  
+  .column a {
+    float: none;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .column a:hover {
+    background-color: #ddd;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .mySlides{display: none;}
+  img{vertical-align: middle;}
+  .slideshow-container{
+      max-width: 500px;
+      position: relative;
+      margin: auto;
+  }
+  .prev,.next{
+      cursor:pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      transition:0.6s ease;
+      border-radius:0 3px 3px 0;
+      user-select: none;
+  }
+  .next{
+      right: 0;
+      border-radius: 3px 0 0 3px;
+  }
+  .prev:hover,.next:hover{
+      background-color: rgba(0,0,0,0.8);
+  }
+  .text{
+      color:black;
+      font-size: 15px;
+      padding:8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+  }
+  .numbertext{
+      color: #f2f2f2;
+      font-size: 12px;
+      padding:8px 12px;
+      position: absolute;
+      top: 0;
+  }
+  .fade{
+      animation: fade;
+      animation-duration:1.5S;
+  }
+  @keyframes fade{
+      from{opacity: .4;}
+      to  {opacity: 1;}
+  };
+  @media only screen and (max-whit:300px) {
+      .prev, .next,.text{
+          font-size: 11px;
+      }
+  }
+  #today{
+    border: 1px solid white;
+    margin-top:50px ;
+    width: 400px;
+    height: 300px;
+    
+    margin: 10px;
+    display: inline-block;
+  }
+  #best{
+    border: 1px solid white;
+    margin-top:50px ;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    display: inline-block;
+  }
+  #contral{
+    display: flex;
+    margin-left: 30%;
+  }
+</style>    
+</head>
+<body onload="showSlides()">
+
+  <div class="navbar">
+    <a href='index.html'>Home</a>
+    <a href="http://basketkorea.com/">농구</a>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="check(1)">이적 상황
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <div class="header">
+          <h2>축구</h2>
+        </div>   
+        <div class="row">
+          <div class="column">
+            <h3>프리미어리그</h3>
+            <a href="tlqkf/html/City.html">맨시티</a>
+            <a href="tlqkf/html/Liverpool.html">리버풀</a>
+            <a href="tlqkf/html/Chelsea.html">첼시</a>
+            <a href="tlqkf/html/Hotspur.html">토트넘</a>
+          </div>
+          <div class="column">
+            <h3>분데스리가</h3>
+            <a href="tlqkf/html/Bayern München.html">뮌헨</a>
+            <a href="tlqkf/html/Dortmund.html">도르트문트</a>
+            <a href="tlqkf/html/04 Leverkusen.html">레버쿠젠</a>
+            <a href="tlqkf/html/Leipzig.html">RB 라이프치히</a>
+          </div>
+          <div class="column">
+            <h3>라리가</h3>
+            <a href="tlqkf/html/Real Madrid C.F.html">레알 마드리드</a>
+            <a href="tlqkf/html/F.C. Barcelona.html">바르셀로나</a>
+            <a href="tlqkf/html/Atlético Madrid.html">AT 마드리드</a>
+            <a href="tlqkf/html/F.C. .html">세비야</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+<div class="slideshow-container" >
+    <div class="mySlides fade">
+        <div class="numbertext">1/5</div>
+        <img src="tlqkf/img/Gabriel_Jesus_Arsenal.webp" style="width:100%" id="one">
+        <div class="text">아스날의 9번 잔혹사</div>    
+    </div>
+    <div class="mySlides fade">
+        <div>2/5</div>
+        <img src="tlqkf/img/Murai.png"style="width: 100%" id="two">
+        <div class="text">애틀란타로 이적한 머레이,"샌안토니에 감사하다"</div>
+    </div>
+    <div class="mySlides fade">
+        <div>3/5</div>
+        <img src="tlqkf/img/Milwaukee.png"style="width: 100%" id="three">
+        <div class="text">밀워키,서지 이바카와 재계약..골밑 전력 유지</div>
+    </div>
+    <div class="mySlides fade">
+        <div>4/5</div>
+        <img src="tlqkf/img/brunson.png"style="width: 100%" id="four">
+        <div class="text">대박 터트린 브런슨,뉴욕 이적...4년 1억400만 달러</div>
+    </div>
+    <div class="mySlides fade">
+        <div>5/5</div>
+        <img src="tlqkf/img/salahhh.webp"style="width: 100%" id="five">
+        <div class="text">재계약 서명 살라,2025년까지 리버풀 남는다</div>
+    </div>
+    <a class="prev" onclick="plusSlider(-1)"><</a>
+    <a class="next" onclick="plusSlider(1)">></a>
+  </div>
+  <div id="contral">
+    <div id="today">
+      <h2>오늘의 스포츠 기사</h2>     
+      <a href="https://sports.news.naver.com/news?oid=425&aid=0000130406">구단주 '호날두 영입하라'에 투헬 감독 '...'</a><br>
+      <a href="https://sports.news.naver.com/news?oid=108&aid=0003068241">무리뉴 단번에 '퇴짜' 맞았다... 직접 설득하고도 '영입 실패'</a><br>
+      <a href="https://sports.news.naver.com/news?oid=413&aid=0000142317">참! 너도 있었지!...토트넘, 영입 직후 임대 보냈던 '세네갈 특급' 복귀</a><br>
+      <a href="https://sports.news.naver.com/news?oid=117&aid=0003621651">토트넘이 웬일? '프랑스 국대+스페인 국대' 수비수까지 품는다.</a><br>
+    </div>
+    <div id="best">
+       <h2>최고의 댓글</h2> 
+       <h1>없어요</h1>
+    </div>
+  </div>
+</body>
+</html>
